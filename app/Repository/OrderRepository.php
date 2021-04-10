@@ -9,4 +9,9 @@ class OrderRepository extends BaseRepository implements OrderRepositoryInterface
     {
         parent::__construct($model);
     }
+    public function loginInUserOrders()
+    {
+        return $this->model->with('user', 'plan', 'order_status', 'client_governorate')->where('user_id', auth()->user()->id)->get();
+    }
+
 }

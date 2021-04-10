@@ -13,8 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::middleware('auth')->group(function (){
-    Route::get('/order/create', 'OrderController@index');
+    Route::get('/order/create', 'OrderController@create');
     Route::post('/order/store', 'OrderController@store');
+    Route::get('/orders', 'OrderController@index');
+    Route::get('/orders/{id}/edit', 'OrderController@edit');
+    Route::put('/orders/{id}', 'OrderController@update');
     Route::get('/', 'HomeController@index')->name('home');
 });
 

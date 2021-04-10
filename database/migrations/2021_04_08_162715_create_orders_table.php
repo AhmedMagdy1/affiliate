@@ -27,6 +27,7 @@ class CreateOrdersTable extends Migration
             $table->foreign('order_status_id')->references('id')->on('order_statuses');
             $table->float('price');
             $table->float('commission');
+            $table->string('commercial_activities');
             $table->text('notes');
             $table->timestamps();
         });

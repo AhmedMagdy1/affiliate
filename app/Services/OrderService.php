@@ -19,7 +19,7 @@ class OrderService
         $this->orderRepository = $orderRepository;
     }
 
-    public function index()
+    public function create()
     {
         $governorates = $this->governorateService->all();
         $planServices = $this->planService->all();
@@ -35,5 +35,10 @@ class OrderService
     {
         $request['commission'] = $this->planService->calculateActualCommission($request['plan_id'], $request['price']);
         return $request + ['user_id' => auth()->user()->id, 'order_status_id' => 1];
+    }
+    public function orders()
+    {
+        $orders = $this->orderRepository->loginInUserOrders();
+        return view('orders', compact('orders'));
     }
 }

@@ -26,6 +26,14 @@
                        class="form-control input-md" required>
             </div>
         </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="commercial_activities">النشاط التجاري</label>
+            <div class="col-md-5">
+                <input name="commercial_activities" type="text" placeholder="برجاء كتابة النشاط التجاري للعميل"
+                       class="form-control input-md" required>
+            </div>
+        </div>
+
 
         <div class="form-group">
             <label class="col-md-4 control-label" for="email">المحافظة</label>
